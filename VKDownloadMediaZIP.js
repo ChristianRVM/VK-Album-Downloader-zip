@@ -8,8 +8,7 @@
 // @icon        data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSIjODI4YTk5IiBkPSJtIDEwLDYgaCA0IHYgNiBoIDMgbCAtNSw2IC01LC02IGggMyB6IiBwYWludC1vcmRlcj0ibWFya2VycyBzdHJva2UgZmlsbCIvPjwvc3ZnPg==
 // @homepage    https://greasyfork.org/ru/scripts/7385-vkdownloadmedia
 // @supportURL  https://vk.com/vkdownloadmedia
-// @include     https://vk.com/*
-// @require     http://danml.com/js/download2.js      
+// @include     https://vk.com/*    
 // @require     https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js
 // @require     https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.5/jszip.min.js
 // @require     https://cdnjs.cloudflare.com/ajax/libs/jszip-utils/0.0.2/jszip-utils.min.js
@@ -313,18 +312,8 @@
                                 var downloadListBtnWrap = ge(downloadListBtnWrapID);
 
                                 if (downloadListBtnWrap) {
-                                    //var counter = 0;
-                                    //for (var i = 0; i < srcArr.length; i++) { 
-                                    //    console.log(srcArr[i]+fileName + " "+ counter+ getExtension(srcArr[i]));
-                                        
-                                     //   download(srcArr[i], fileName + " "+ counter + getExtension(srcArr[i]), 'image/'+getExtension(srcArr[i]));
-                                        
-                                        //createFile('image/'+getExtension(srcArr[i]),srcArr[i]);
-                                       // counter++;
-                                    //}
-                                    generateZIP(srcArr, fileName);
+                                    generateZIP(srcArr, fileName); //esto agregué
                                     var url = createFile('text/plain;charset=utf-8', srcArr.join('\r\n'));
-
                                     downloadListBtnWrap.innerHTML = '<a href="' + url + '" class="flat_button secondary" download="' + fileName + '.txt">Lista de URL</a>';
                                 }
                             } else {
@@ -740,7 +729,5 @@ function generateZIP(links, names) { //source: https://stackoverflow.com/a/53861
     });
   });
 }
-
-
     // endregion Helpers
 })();
